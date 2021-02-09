@@ -1,0 +1,15 @@
+version: '3'
+services:
+  app:
+    container_name: docker_insta
+    restart: always
+    bulid: .
+    ports: 
+      - '80:3000'
+    links: 
+      - mongo
+  mongo:  
+    container: mongo
+    image: mongo
+    ports:
+      - '27017:27017'
